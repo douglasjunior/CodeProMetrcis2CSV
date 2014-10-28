@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<schemas xmlns='http://xml.netbeans.org/schema/JAXBWizConfig' destdir='build/generated-sources/jaxb' projectName='MetricasCodePro' version='1.0'>
+	<schema type='-xmlschema' package='br.edu.utfpr.cp' name='BindMetricsCodePro'>
+		<xjc-options>
+		</xjc-options>
+		<schema-sources>
+			<schema-source location='xml-resources/jaxb/BindMetricsCodePro/Metrics.xsd' origLocation='../../Users/Douglas/Downloads/Metrics.xsd'/>
+		</schema-sources>
+		<bindings>
+		</bindings>
+		<catalog/>
+	</schema>
+</schemas>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/NetbeansProjects/MetricasCodepro/../../Users/Douglas/Downloads/MetricResults.mrs" uri="xml-resources/jaxb/BindMetrciasCodePro/MetricResults.mrs.xml"/>
+    <system systemId="file:/C:/NetbeansProjects/MetricasCodepro/../MetricasCodePro/src/br/edu/utfpr/cp/MetricResults.xml" uri="xml-resources/jaxb/Bind/MetricResults.xml"/>
+    <system systemId="file:/C:/NetbeansProjects/MetricasCodePro/../../Users/Douglas/Downloads/Metrics.xsd" uri="xml-resources/jaxb/BindMetricsCodePro/Metrics.xsd"/>
+</catalog>

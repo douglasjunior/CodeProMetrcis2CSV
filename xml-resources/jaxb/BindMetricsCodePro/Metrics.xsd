@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="metricsResultSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="analysis"/>
+        <xs:element maxOccurs="unbounded" ref="metricResult"/>
+      </xs:sequence>
+      <xs:attribute name="baseName" use="required" type="xs:NCName"/>
+      <xs:attribute name="cancelled" use="required" type="xs:boolean"/>
+      <xs:attribute name="endTime" use="required" type="xs:integer"/>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="outOfMemory" use="required" type="xs:boolean"/>
+      <xs:attribute name="startTime" use="required" type="xs:integer"/>
+      <xs:attribute name="systemDefined" use="required" type="xs:boolean"/>
+      <xs:attribute name="version" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="analysis">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="resource"/>
+      </xs:sequence>
+      <xs:attribute name="analysisItemSetName" use="required"/>
+      <xs:attribute name="exclusion" use="required"/>
+      <xs:attribute name="filterType" use="required" type="xs:NCName"/>
+      <xs:attribute name="id" use="required" type="xs:integer"/>
+      <xs:attribute name="inclusion" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resource">
+    <xs:complexType>
+      <xs:attribute name="authors"/>
+      <xs:attribute name="characterCount" type="xs:integer"/>
+      <xs:attribute name="lineCount" type="xs:integer"/>
+      <xs:attribute name="nonCommentLineCount" type="xs:integer"/>
+      <xs:attribute name="path" use="required"/>
+      <xs:attribute name="type" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="metricResult">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="metricResult"/>
+        <xs:element ref="breakdownDetail"/>
+        <xs:element ref="computer"/>
+        <xs:element ref="listDetail"/>
+        <xs:element ref="methodCountByParameterSizeDetail"/>
+        <xs:element ref="percentageDetail"/>
+        <xs:element ref="typeCountByConstructorSizeDetail"/>
+        <xs:element ref="typeCountByFieldSizeDetail"/>
+        <xs:element ref="typeCountByMethodSizeDetail"/>
+        <xs:element ref="typeCountBySubtypeSizeDetail"/>
+      </xs:choice>
+      <xs:attribute name="metricId"/>
+      <xs:attribute name="scope" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="breakdownDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="breakdownLine"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="computer">
+    <xs:complexType>
+      <xs:attribute name="denominator" type="xs:decimal"/>
+      <xs:attribute name="isRatio" type="xs:boolean"/>
+      <xs:attribute name="numerator" type="xs:decimal"/>
+      <xs:attribute name="orderingValue" type="xs:double"/>
+      <xs:attribute name="type" use="required" type="xs:NCName"/>
+      <xs:attribute name="value"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listDetail">
+    <xs:complexType>
+      <xs:attribute name="list" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="methodCountByParameterSizeDetail">
+    <xs:complexType>
+      <xs:attribute name="data" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="percentageDetail">
+    <xs:complexType>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="names" use="required"/>
+      <xs:attribute name="values" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="typeCountByConstructorSizeDetail">
+    <xs:complexType>
+      <xs:attribute name="data" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="typeCountByFieldSizeDetail">
+    <xs:complexType>
+      <xs:attribute name="data" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="typeCountByMethodSizeDetail">
+    <xs:complexType>
+      <xs:attribute name="data" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="typeCountBySubtypeSizeDetail">
+    <xs:complexType>
+      <xs:attribute name="data" use="required"/>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="breakdownLine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="breakdownLine"/>
+      </xs:sequence>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="value" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
